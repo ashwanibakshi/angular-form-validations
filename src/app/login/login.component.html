@@ -1,0 +1,15 @@
+<br><br>
+
+<form  [formGroup]="loginForm" (ngSubmit)="submit()">
+     <input type="text" name="name" id="name" formControlName="name"><br>
+     <div *ngIf="f.name.invalid && (f.name.dirty || f.name.touched)" class="invalid-feedback">
+        <div *ngIf="f.name.errors.required">First Name is required</div>
+    </div>
+   <br>
+   <input type="email" name="email" id="email" formControlName="email"><br>
+   <div *ngIf="f.email.invalid && (f.email.dirty || f.email.touched)" class="invalid-feedback">
+    <div *ngIf="f.email.errors.required">Email is required</div>
+    <div *ngIf="f.email.errors.email">In valid email</div>
+</div><br>
+     <input type="submit" value="submit">
+</form>
